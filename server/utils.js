@@ -1,5 +1,5 @@
 const crypto = require('crypto')
-const {privateKey, publicKey} = require('./server');
+const {privateKey, publicKey} = require('./key');
 const arr = []
 const encryptText = (plainText) => {
     return crypto.publicEncrypt({

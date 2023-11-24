@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {privateKey, publicKey} = require('../server')
+const {privateKey, publicKey} = require('../key')
 const decryptText = require('../utils').decryptText
 
 router.get('/key-exchange', (req, res) => {
