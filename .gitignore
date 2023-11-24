@@ -1,0 +1,4 @@
+node_modules/
+client/private_key.pem
+client/public_key.pem
+.idea/
