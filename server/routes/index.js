@@ -1,19 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const {privateKey, publicKey} = require('../key')
-const decryptText = require('../utils').decryptText
+const {decryptText, publicKeyPem} = require('../utils');
 
 router.get('/key-exchange', (req, res) => {
     return res.status(200).json({
-        "publicKey": publicKey
+        "publicKey": publicKeyPem
     })
 })
 
 router.post('/save-shards', (req, res) => {
-    console.log(req.body.shard1)
     try {
         const shard1 = decryptText(req.body.shard1);
         const shard2 = decryptText(req.body.shard2);
+        console.log(shard1, shard2);
         res.json({
             "message": "shard saved successfully to the db",
         })
